@@ -15,6 +15,7 @@ contract Auction {
   mapping(address => uint) private _balances;
 
   constructor(address nft_, uint increasePercentage_) {
+    require(increasePercentage_ != 0);
     _nft = SmartNFT(nft_);
     _increasePercentage = increasePercentage_;
   }
